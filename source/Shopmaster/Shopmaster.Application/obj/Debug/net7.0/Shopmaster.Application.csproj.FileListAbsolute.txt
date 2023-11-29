@@ -1,0 +1,15 @@
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\bin\Debug\net7.0\Shopmaster.Application.deps.json
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\bin\Debug\net7.0\Shopmaster.Application.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\bin\Debug\net7.0\Shopmaster.Application.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\bin\Debug\net7.0\Shopmaster.Domain.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\bin\Debug\net7.0\Shopmaster.Domain.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.csproj.AssemblyReference.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.AssemblyInfoInputs.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.AssemblyInfo.cs
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.csproj.CoreCompileInputs.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.csproj.CopyComplete
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\refint\Shopmaster.Application.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\ref\Shopmaster.Application.dll

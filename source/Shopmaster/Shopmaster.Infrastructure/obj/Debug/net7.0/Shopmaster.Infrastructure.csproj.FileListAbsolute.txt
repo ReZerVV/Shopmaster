@@ -1,0 +1,17 @@
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Infrastructure.deps.json
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Infrastructure.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Infrastructure.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Application.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Domain.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Application.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\bin\Debug\net7.0\Shopmaster.Domain.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.AssemblyInfo.cs
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.csproj.CopyComplete
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\refint\Shopmaster.Infrastructure.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\ref\Shopmaster.Infrastructure.dll

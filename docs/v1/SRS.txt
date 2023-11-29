@@ -1,0 +1,39 @@
+Functional Requirements:
+    
+    FR.1:   The user can register their new account by entering their email address, login and password.
+    FR.2:   After registration the system will send a confirmation email.
+    FR.3:   The user can log into his account by entering his login and password.
+    FR.4:   The user can log into his account using the Google provider.
+    FR.5:   A registered user can recover their password by receiving an email with a link to set a new password.
+    FR.6:   Sellers can create new listings.
+    FR.7:   Sellers can delete listings.
+    FR.8:   Sellers can edit listings.
+    FR.9:   Sellers can hide listings from search system.
+    FR.10:  Sellers can show listings from search system.
+    FR.11:  Sellers can set listing discounts by specifying the date the discount will be active.
+    FR.12:  Sellers may cancel current discounts.
+    FR.13:  Sellers can view the list of their products.
+    FR.14:  Sellers can view the list of customer orders.
+    FR.15:  Sellers can accept customer orders.
+    FR.16:  Sellers can reject customer orders.
+    FR.17:  Sellers canview the discount calendar for their products.
+    FR.18:  Sellers receive a notification every time customers order their products.
+    FR.19:  Customers can  checkout for products from the cart by entering products count and location for delivery.
+    FR.20:  Customers can add items to their cart by clicking the "Add to Cart" button and entering the quantity of the item.
+    FR.21:  Customers can buy product by clicking the "Buy Now" button and entering the quantity of the item.
+    FR.22:  Customers can cancel an order before the seller accepts the order. If the customer tries to cancel the order after the seller has accepted it, the customer may will be penalized.
+    FR.23:  Customers can add items to their list of favorite by clicking the "Like" button.
+    FR.24:  Customers can remove items from the favorites list by clicking the "Delete" button in the favorites list.
+    FR.25:  Customers can remove items from the cart by clicking the "Delete" button in the cart.
+    FR.26:  Customers can leave reviews on a seller's profile by entering a rating and review description.
+    FR.27:  Customers can leave reviews about the product by entering a rating and review description.
+    FR.28:  Customers receive a notification every time sellers accept or cancel their orders.
+    FR.29:  Customers can search products by name.
+    FR.30:  Customers can filter products by category.
+    FR.31:  Customers can filter products by product price.
+    FR.32:  Customers can filter products by sellers.
+    FR.33:  Customers can filter products by rating.
+    FR.34:  Customers can view seller information from product details.
+    FR.35:  Customers can view list of reviews from product details.
+
+Non-Functional Requirements:

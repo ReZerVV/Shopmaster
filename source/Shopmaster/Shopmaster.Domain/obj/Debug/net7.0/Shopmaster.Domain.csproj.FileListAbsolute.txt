@@ -1,0 +1,12 @@
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\bin\Debug\net7.0\Shopmaster.Domain.deps.json
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\bin\Debug\net7.0\Shopmaster.Domain.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\bin\Debug\net7.0\Shopmaster.Domain.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.csproj.AssemblyReference.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.AssemblyInfoInputs.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.AssemblyInfo.cs
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\refint\Shopmaster.Domain.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\Shopmaster.Domain.pdb
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Domain\obj\Debug\net7.0\ref\Shopmaster.Domain.dll
