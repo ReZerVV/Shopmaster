@@ -13,3 +13,4 @@ C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.App
 C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\refint\Shopmaster.Application.dll
 C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.pdb
 C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\ref\Shopmaster.Application.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Application\obj\Debug\net7.0\Shopmaster.Application.sourcelink.json

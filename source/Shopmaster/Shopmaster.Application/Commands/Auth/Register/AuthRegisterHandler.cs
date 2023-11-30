@@ -1,4 +1,7 @@
+using System.Net;
 using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Shopmaster.Application.Common.Persistence;
 using Shopmaster.Application.Common.Services.Auth;
 using Shopmaster.Domain.Entites;
@@ -12,13 +15,19 @@ public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthReg
     private readonly ITokenRepository _tokenRepository;
     private readonly ITokenGenerator _tokenGenerator;
     private readonly IPasswordHasher _passwordHasher;
+    private readonly IEmailSender _emailSender;
+    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IConfiguration _configuration;
 
-    public AuthRegisterHandller(IUserRepository userRepository, ITokenRepository tokenRepository, ITokenGenerator tokenGenerator, IPasswordHasher passwordHasher)
+    public AuthRegisterHandller(IUserRepository userRepository, ITokenRepository tokenRepository, ITokenGenerator tokenGenerator, IPasswordHasher passwordHasher, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, IEmailSender emailSender)
     {
         _userRepository = userRepository;
         _tokenRepository = tokenRepository;
         _tokenGenerator = tokenGenerator;
         _passwordHasher = passwordHasher;
+        _httpContextAccessor = httpContextAccessor;
+        _configuration = configuration;
+        _emailSender = emailSender;
     }
 
     public Task<AuthRegisterResponse> Handle(AuthRegisterRequest request, CancellationToken cancellationToken)
@@ -39,6 +48,9 @@ public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthReg
             Password = passwordHash
         };
         _userRepository.Add(user);
+            
+        string confirmationLink = $"{_configuration.GetSection("Host").Value}/api/v1/confirm/{user.Id}";
+        _emailSender.Send(user.Email, "Confirmation account", $"Confiration link {confirmationLink}");
 
         string accessToken = _tokenGenerator.GenerateToken(user);
 
@@ -62,6 +74,9 @@ public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthReg
             };
             _tokenRepository.Add(newRefreshToken);
         }
+
+        var response = _httpContextAccessor.HttpContext.Response;
+        response.Cookies.Append("refreshToken", refreshToken);
 
         return Task.FromResult(
             new AuthRegisterResponse(

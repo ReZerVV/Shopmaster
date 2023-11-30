@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Shopmaster.Application.Common.Persistence;
 using Shopmaster.Application.Common.Services.Auth;
 using Shopmaster.Domain.Entites;
@@ -12,13 +13,15 @@ public class AuthLoginHandler : IRequestHandler<AuthLoginRequest, AuthLoginRespo
     private readonly ITokenRepository _tokenRepository;
     private readonly IPasswordHasher _passwordHasher;
     private readonly IUserRepository _userRepository;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AuthLoginHandler(ITokenGenerator tokenGenerator, ITokenRepository tokenRepository, IPasswordHasher passwordHasher, IUserRepository userRepository)
+    public AuthLoginHandler(ITokenGenerator tokenGenerator, ITokenRepository tokenRepository, IPasswordHasher passwordHasher, IUserRepository userRepository, IHttpContextAccessor httpContextAccessor)
     {
         _tokenGenerator = tokenGenerator;
         _tokenRepository = tokenRepository;
         _passwordHasher = passwordHasher;
         _userRepository = userRepository;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public Task<AuthLoginResponse> Handle(AuthLoginRequest request, CancellationToken cancellationToken)
@@ -26,6 +29,11 @@ public class AuthLoginHandler : IRequestHandler<AuthLoginRequest, AuthLoginRespo
         if (_userRepository.GetByEmail(request.Email) is not User user)
         {
             throw new ApplicationException("User with given email not found");
+        }
+
+        if (!user.IsConfirmed)
+        {
+            throw new ApplicationException("Account not activated");
         }
 
         if (!_passwordHasher.Verify(request.Password, user.Password))
@@ -55,6 +63,9 @@ public class AuthLoginHandler : IRequestHandler<AuthLoginRequest, AuthLoginRespo
             };
             _tokenRepository.Add(newRefreshToken);
         }
+
+        var response = _httpContextAccessor.HttpContext.Response;
+        response.Cookies.Append("refreshToken", refreshToken);
 
         return Task.FromResult(
             new AuthLoginResponse(

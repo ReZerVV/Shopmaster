@@ -1,5 +1,8 @@
+using System.Net;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shopmaster.Application.Commands.Auth;
 using Shopmaster.Application.Commands.Auth.Login;
 using Shopmaster.Application.Commands.Auth.Register;
 
@@ -28,9 +31,17 @@ public class AuthController : ControllerBase
         return Ok(_mediator.Send(request));
     }
 
+    [Authorize]
     [HttpPost("refresh")]
-    public IActionResult Refresh()
+    public ActionResult<AuthRefreshResponse> Refresh()
     {
-        return Ok();
+        return Ok(_mediator.Send(new AuthRefreshRequest()));
+    }
+
+    [Authorize]
+    [HttpPost("logout")]
+    public IActionResult Logout()
+    {
+        return Ok(_mediator.Send(new AuthLogoutRequest()));
     }
 }
