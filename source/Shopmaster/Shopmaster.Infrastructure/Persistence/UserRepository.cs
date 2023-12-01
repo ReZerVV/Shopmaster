@@ -30,6 +30,12 @@ public class UserRepository : IUserRepository
             .FirstOrDefault(user => user.Id == id);
     }
 
+    public void Remove(User user)
+    {
+        _applicationDbContext.Users.Remove(user);
+        _applicationDbContext.SaveChanges();
+    }
+
     public void Update(User user)
     {
         _applicationDbContext.SaveChanges();

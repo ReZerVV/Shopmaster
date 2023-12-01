@@ -4,20 +4,20 @@ using Microsoft.AspNetCore.Http;
 using Shopmaster.Application.Common.Persistence;
 using Shopmaster.Domain.Entites;
 
-namespace Shopmaster.Application.Commands.Accounts.Edit;
+namespace Shopmaster.Application.Commands.Accounts.Delete;
 
-public class AccountsEditHandler : IRequestHandler<AccountsEditRequest, AccountsEditResponse>
+public class AccountsDeleteHandler : IRequestHandler<AccountsDeleteRequest>
 {
     private readonly IUserRepository _userRepository;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AccountsEditHandler(IUserRepository userRepository, IHttpContextAccessor httpContextAccessor)
+    public AccountsDeleteHandler(IUserRepository userRepository, IHttpContextAccessor httpContextAccessor)
     {
         _userRepository = userRepository;
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public Task<AccountsEditResponse> Handle(AccountsEditRequest request, CancellationToken cancellationToken)
+    public Task Handle(AccountsDeleteRequest request, CancellationToken cancellationToken)
     {
         if (Guid.TryParse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out Guid userId))
         {
@@ -29,18 +29,8 @@ public class AccountsEditHandler : IRequestHandler<AccountsEditRequest, Accounts
             throw new ApplicationException("User with given id not found");
         }
 
-        user.FirstName = request.FirstName;
-        user.LastName = request.LastName;
+        _userRepository.Remove(user);
 
-        _userRepository.Update(user);
-
-        return Task.FromResult(
-            new AccountsEditResponse(
-                Id: user.Id.ToString(),
-                FirstName: user.FirstName,
-                LastName: user.LastName,
-                Email: user.Email
-            )
-        );
+        return Task.CompletedTask;
     }
 }

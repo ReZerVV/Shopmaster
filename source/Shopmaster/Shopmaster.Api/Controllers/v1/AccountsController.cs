@@ -1,6 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Shopmaster.Application.Commands.Accounts.Delete;
+using Shopmaster.Application.Commands.Accounts.Edit;
 using Shopmaster.Application.Commands.Accounts.GetById;
 using Shopmaster.Application.Commands.Accounts.Me;
 
@@ -22,6 +24,20 @@ public class AccountsController : ControllerBase
     public ActionResult<AccountsMeResponse> Me()
     {
         return Ok(_mediator.Send(new AccountsMeRequest()));
+    }
+
+    [Authorize]
+    [HttpPut("{userId:guid}")]
+    public ActionResult<AccountsEditResponse> Edit([FromBody] AccountsEditRequest request)
+    {
+        return Ok(_mediator.Send(request));
+    }
+
+    [Authorize]
+    [HttpDelete]
+    public IActionResult Delete()
+    {
+        return Ok(_mediator.Send(new AccountsDeleteRequest()));
     }
 
     [HttpGet("{userId:guid}")]
