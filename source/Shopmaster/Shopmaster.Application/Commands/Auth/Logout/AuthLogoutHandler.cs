@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Shopmaster.Application.Common.Persistence;
 using Shopmaster.Domain.Entites;
 
-namespace Shopmaster.Application.Commands.Auth;
+namespace Shopmaster.Application.Commands.Auth.Logout;
 
 public class AuthLogoutHandler : IRequestHandler<AuthLogoutRequest>
 {

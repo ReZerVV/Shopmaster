@@ -29,4 +29,9 @@ public class UserRepository : IUserRepository
         return _applicationDbContext.Users
             .FirstOrDefault(user => user.Id == id);
     }
+
+    public void Update(User user)
+    {
+        _applicationDbContext.SaveChanges();
+    }
 }

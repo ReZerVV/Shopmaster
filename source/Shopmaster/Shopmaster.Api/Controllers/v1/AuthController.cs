@@ -3,7 +3,10 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shopmaster.Application.Commands.Auth;
+using Shopmaster.Application.Commands.Auth.Confirm;
 using Shopmaster.Application.Commands.Auth.Login;
+using Shopmaster.Application.Commands.Auth.Logout;
+using Shopmaster.Application.Commands.Auth.Refresh;
 using Shopmaster.Application.Commands.Auth.Register;
 
 namespace Shopmaster.Api.Controllers.v1;
@@ -20,15 +23,21 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    public ActionResult<AuthRegisterResponse> Register(AuthRegisterRequest request)
+    public IActionResult Register([FromBody] AuthRegisterRequest request)
     {
         return Ok(_mediator.Send(request));
     }
 
     [HttpPost("login")]
-    public ActionResult<AuthLoginResponse> Login(AuthLoginRequest request)
+    public ActionResult<AuthLoginResponse> Login([FromBody] AuthLoginRequest request)
     {
         return Ok(_mediator.Send(request));
+    }
+
+    [HttpPost("confirm/{link}")]
+    public IActionResult Confirm([FromRoute] string link)
+    {
+        return Ok(_mediator.Send(new AuthConfirmRequest(link)));
     }
 
     [Authorize]

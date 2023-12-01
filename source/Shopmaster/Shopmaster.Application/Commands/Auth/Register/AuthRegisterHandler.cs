@@ -8,7 +8,7 @@ using Shopmaster.Domain.Entites;
 
 namespace Shopmaster.Application.Commands.Auth.Register;
 
-public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthRegisterResponse>
+public class AuthRegisterHandler : IRequestHandler<AuthRegisterRequest>
 {
     private const int ExpiryMinutes = 120;
     private readonly IUserRepository _userRepository;
@@ -19,7 +19,7 @@ public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthReg
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IConfiguration _configuration;
 
-    public AuthRegisterHandller(IUserRepository userRepository, ITokenRepository tokenRepository, ITokenGenerator tokenGenerator, IPasswordHasher passwordHasher, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, IEmailSender emailSender)
+    public AuthRegisterHandler(IUserRepository userRepository, ITokenRepository tokenRepository, ITokenGenerator tokenGenerator, IPasswordHasher passwordHasher, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, IEmailSender emailSender)
     {
         _userRepository = userRepository;
         _tokenRepository = tokenRepository;
@@ -30,7 +30,7 @@ public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthReg
         _emailSender = emailSender;
     }
 
-    public Task<AuthRegisterResponse> Handle(AuthRegisterRequest request, CancellationToken cancellationToken)
+    public Task Handle(AuthRegisterRequest request, CancellationToken cancellationToken)
     {
         if (_userRepository.GetByEmail(request.Email) is not null)
         {
@@ -52,37 +52,6 @@ public class AuthRegisterHandller : IRequestHandler<AuthRegisterRequest, AuthReg
         string confirmationLink = $"{_configuration.GetSection("Host").Value}/api/v1/confirm/{user.Id}";
         _emailSender.Send(user.Email, "Confirmation account", $"Confiration link {confirmationLink}");
 
-        string accessToken = _tokenGenerator.GenerateToken(user);
-
-        string refreshToken = _tokenGenerator.GenerateToken(user);
-
-        var existsRefreshToken = _tokenRepository.GetByUserId(user.Id);
-        if (existsRefreshToken is not null)
-        {
-            existsRefreshToken.Token = refreshToken;
-            existsRefreshToken.Expiry = DateTime.UtcNow.AddMinutes(ExpiryMinutes);
-            _tokenRepository.Update(existsRefreshToken);
-        }
-        else
-        {
-            RefreshToken newRefreshToken = new RefreshToken
-            {
-                Id = Guid.NewGuid(),
-                UserId = user.Id,
-                Token = refreshToken,
-                Expiry = DateTime.UtcNow.AddMinutes(ExpiryMinutes)
-            };
-            _tokenRepository.Add(newRefreshToken);
-        }
-
-        var response = _httpContextAccessor.HttpContext.Response;
-        response.Cookies.Append("refreshToken", refreshToken);
-
-        return Task.FromResult(
-            new AuthRegisterResponse(
-                AccessToken: accessToken,
-                RefreshToken: refreshToken
-            )
-        );
+        return Task.CompletedTask;
     }
 }

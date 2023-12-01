@@ -7,4 +7,4 @@ public record AuthRegisterRequest(
     string LastName,
     string Email,
     string Password
-) : IRequest<AuthRegisterResponse>;
+) : IRequest;

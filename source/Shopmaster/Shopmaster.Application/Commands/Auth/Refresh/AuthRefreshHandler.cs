@@ -5,7 +5,7 @@ using Shopmaster.Application.Common.Persistence;
 using Shopmaster.Application.Common.Services.Auth;
 using Shopmaster.Domain.Entites;
 
-namespace Shopmaster.Application.Commands.Auth;
+namespace Shopmaster.Application.Commands.Auth.Refresh;
 
 public class AuthRefreshHandler : IRequestHandler<AuthRefreshRequest, AuthRefreshResponse>
 {
