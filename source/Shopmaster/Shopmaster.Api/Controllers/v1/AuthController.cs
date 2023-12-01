@@ -6,6 +6,8 @@ using Shopmaster.Application.Commands.Auth;
 using Shopmaster.Application.Commands.Auth.Confirm;
 using Shopmaster.Application.Commands.Auth.Login;
 using Shopmaster.Application.Commands.Auth.Logout;
+using Shopmaster.Application.Commands.Auth.Recovery;
+using Shopmaster.Application.Commands.Auth.RecoveryPassword;
 using Shopmaster.Application.Commands.Auth.Refresh;
 using Shopmaster.Application.Commands.Auth.Register;
 
@@ -32,6 +34,18 @@ public class AuthController : ControllerBase
     public ActionResult<AuthLoginResponse> Login([FromBody] AuthLoginRequest request)
     {
         return Ok(_mediator.Send(request));
+    }
+
+    [HttpPost("recovery")]
+    public IActionResult Recovery([FromBody] AuthRecoveryRequest request)
+    {
+        return Ok(_mediator.Send(request));
+    }
+
+    [HttpPost("recovery/{link:guid}")]
+    public IActionResult Recovery([FromRoute] Guid link, [FromBody] string email)
+    {
+        return Ok(_mediator.Send(new AuthRecoveryPasswordRequest(link, email)));
     }
 
     [HttpPost("confirm/{link}")]

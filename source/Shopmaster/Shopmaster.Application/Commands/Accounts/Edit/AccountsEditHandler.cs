@@ -19,7 +19,7 @@ public class AccountsEditHandler : IRequestHandler<AccountsEditRequest, Accounts
 
     public Task<AccountsEditResponse> Handle(AccountsEditRequest request, CancellationToken cancellationToken)
     {
-        if (Guid.TryParse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out Guid userId))
+        if (!Guid.TryParse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out Guid userId))
         {
             throw new ApplicationException("Unauthorized");
         }

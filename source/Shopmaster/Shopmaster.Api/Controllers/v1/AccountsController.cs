@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shopmaster.Application.Commands.Accounts.Delete;
 using Shopmaster.Application.Commands.Accounts.Edit;
+using Shopmaster.Application.Commands.Accounts.EditPassword;
 using Shopmaster.Application.Commands.Accounts.GetById;
 using Shopmaster.Application.Commands.Accounts.Me;
 
@@ -27,8 +28,15 @@ public class AccountsController : ControllerBase
     }
 
     [Authorize]
-    [HttpPut("{userId:guid}")]
+    [HttpPut]
     public ActionResult<AccountsEditResponse> Edit([FromBody] AccountsEditRequest request)
+    {
+        return Ok(_mediator.Send(request));
+    }
+
+    [Authorize]
+    [HttpPut("password")]
+    public IActionResult EditPassword([FromBody] AccountsEditPasswordRequest request)
     {
         return Ok(_mediator.Send(request));
     }

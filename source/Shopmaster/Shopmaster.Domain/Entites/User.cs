@@ -9,4 +9,5 @@ public class User
     public string? Email { get; set; }
     public string? Password { get; set; }
     public bool IsConfirmed { get; set; } = false;
+    public bool IsRecovery { get; set; } = false;
 }

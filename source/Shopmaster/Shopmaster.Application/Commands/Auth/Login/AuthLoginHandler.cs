@@ -64,9 +64,6 @@ public class AuthLoginHandler : IRequestHandler<AuthLoginRequest, AuthLoginRespo
             _tokenRepository.Add(newRefreshToken);
         }
 
-        var response = _httpContextAccessor.HttpContext.Response;
-        response.Cookies.Append("refreshToken", refreshToken);
-
         return Task.FromResult(
             new AuthLoginResponse(
                 AccessToken: accessToken,
