@@ -23,6 +23,7 @@ public static class DependencyInjection
 
         services.AddTransient<IUserRepository, UserRepository>();
         services.AddTransient<ITokenRepository, TokenRepository>();
+        services.AddTransient<ICategoryRepository, CategoryRepository>();
         services.AddDbContext<ApplicationDbContext>(options => 
         {
             options.UseInMemoryDatabase("Shopmaster.InMemoryDatabase");
