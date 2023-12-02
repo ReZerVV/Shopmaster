@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kM/nNxF4BV1iW/F2o1Tf1Ve4m2dnzl1m9nQ+gtYu+CL1tsO4rdn3LZEyEJsqfjZ1MJq6pJn64ii+3as9Uf6B2w==",
+  "dgSpecHash": "b/1myUW2WeTMjVkDlxhDRvVGeNSmeyfjPzbpeSfY1pUWjUsBubjhhp5K5z4kzVcmlGnxW6dDotbaIkjZRMV+WA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kiril\\Projects\\www Projects\\ShopMaster\\source\\Shopmaster\\Shopmaster.Api\\Shopmaster.Api.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\kiril\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0\\microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\kiril\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.0\\microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
     "C:\\Users\\kiril\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.0\\microsoft.entityframeworkcore.inmemory.7.0.0.nupkg.sha512",
+    "C:\\Users\\kiril\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.0\\microsoft.entityframeworkcore.relational.7.0.0.nupkg.sha512",
     "C:\\Users\\kiril\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\kiril\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\kiril\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",

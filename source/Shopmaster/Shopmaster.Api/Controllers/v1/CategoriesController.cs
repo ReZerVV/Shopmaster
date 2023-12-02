@@ -7,7 +7,7 @@ using Shopmaster.Application.Commands.Categories.Edit;
 using Shopmaster.Application.Commands.Categories.GetAll;
 using Shopmaster.Application.Commands.Categories.GetById;
 
-namespace Shopmaster.Api.Controllers;
+namespace Shopmaster.Api.Controllers.v1;
 
 [ApiController]
 [Route("api/v1/categories")]
@@ -41,7 +41,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet("{categoryId:int}")]
-    public ActionResult<CategoriesGetByIdResponse> GetAll([FromRoute] int categoryId)
+    public ActionResult<CategoriesGetByIdResponse> GetById([FromRoute] int categoryId)
     {
         return Ok(_mediator.Send(new CategoriesGetByIdRequest(categoryId)));
     }

@@ -22,6 +22,7 @@ public static class DependencyInjection
         services.AddAuthorization(configuration);
 
         services.AddTransient<IUserRepository, UserRepository>();
+        services.AddTransient<IAdvertRepository, AdvertRepository>();
         services.AddTransient<ITokenRepository, TokenRepository>();
         services.AddTransient<ICategoryRepository, CategoryRepository>();
         services.AddDbContext<ApplicationDbContext>(options => 

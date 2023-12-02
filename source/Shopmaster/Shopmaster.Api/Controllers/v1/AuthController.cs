@@ -43,9 +43,9 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("recovery/{link:guid}")]
-    public IActionResult Recovery([FromRoute] Guid link, [FromBody] string email)
+    public IActionResult Recovery([FromRoute] Guid link, [FromBody] string password)
     {
-        return Ok(_mediator.Send(new AuthRecoveryPasswordRequest(link, email)));
+        return Ok(_mediator.Send(new AuthRecoveryPasswordRequest(link, password)));
     }
 
     [HttpPost("confirm/{link}")]

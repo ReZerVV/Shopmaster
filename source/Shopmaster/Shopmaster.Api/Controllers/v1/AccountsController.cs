@@ -7,7 +7,7 @@ using Shopmaster.Application.Commands.Accounts.EditPassword;
 using Shopmaster.Application.Commands.Accounts.GetById;
 using Shopmaster.Application.Commands.Accounts.Me;
 
-namespace Shopmaster.Api.Controllers;
+namespace Shopmaster.Api.Controllers.v1;
 
 [ApiController]
 [Route("api/v1/accounts")]
