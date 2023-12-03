@@ -6,6 +6,7 @@ namespace Shopmaster.Infrastructure.Persistence;
 public class ApplicationDbContext : DbContext
 {
     public DbSet<User> Users { get; set; }
+    public DbSet<Order> Orders { get; set; }
     public DbSet<Advert> Adverts { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
@@ -18,8 +19,19 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        modelBuilder.Entity<Order>(options =>
+        {
+            options.HasOne(order => order.Customer)
+                .WithMany(customer => customer.Orders);
+            options.HasOne(order => order.Advert)
+                .WithMany(advert => advert.Orders);
+        });
+
         modelBuilder.Entity<Advert>(options => 
         {
+            options.HasOne(advert => advert.Seller)
+                .WithMany(seller => seller.Adverts);
+
             options.Property(advert => advert.Images)
                 .HasConversion(
                     v => string.Join(',', v),

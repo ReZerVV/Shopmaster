@@ -17,18 +17,18 @@ public class AdvertsCreateHandler : IRequestHandler<AdvertsCreateRequest, Advert
         _httpContextAccessor = httpContextAccessor;
         _advertRepository = advertRepository;
     }
-
+ 
     public Task<AdvertsCreateResponse> Handle(AdvertsCreateRequest request, CancellationToken cancellationToken)
     {
-        // if (!Guid.TryParse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out Guid userId))
-        // {
-        //     throw new ApplicationException("Unauthorized");
-        // }
+        if (!Guid.TryParse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out Guid userId))
+        {
+            throw new ApplicationException("Unauthorized");
+        }
 
         Advert advert = new Advert
         {
             Id = Guid.NewGuid(),
-            SellerId = Guid.NewGuid(),
+            SellerId = userId,
             Title = request.Title,
             Description = request.Description,
             Location = request.Location,

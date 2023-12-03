@@ -11,9 +11,15 @@ public class ErrorController : ControllerBase
     public IActionResult Errors()
     {
         Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
-        return Problem(
-            statusCode: StatusCodes.Status400BadRequest,
-            title: exception?.Message
-        );
+        switch (exception)
+        {
+            case ApplicationException:
+                return Problem(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    title: exception?.Message
+                );
+
+            default: return Problem();
+        }
     }
 }

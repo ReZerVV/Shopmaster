@@ -13,4 +13,5 @@ public class Advert
     public int CategoryId { get; set; }
     public Category Category { get; set; }
     public bool IsActive { get; set; } = false;
+    public IEnumerable<Order> Orders { get; set; } = new List<Order>();
 }

@@ -10,4 +10,6 @@ public class User
     public string? Password { get; set; }
     public bool IsConfirmed { get; set; } = false;
     public bool IsRecovery { get; set; } = false;
+    public IEnumerable<Order> Orders { get; set; } = new List<Order>();
+    public IEnumerable<Advert> Adverts { get; set; } = new List<Advert>();
 }
