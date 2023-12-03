@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using MediatR;
 using Shopmaster.Application.Common.Persistence;
 
-namespace Shopmaster.Application.Commands.Filter;
+namespace Shopmaster.Application.Commands.Adverts.Filter;
 
 public class AdvertsFilterHandler : IRequestHandler<AdvertsFilterRequest, IEnumerable<AdvertsFilterResponse>>
 {
@@ -21,10 +21,10 @@ public class AdvertsFilterHandler : IRequestHandler<AdvertsFilterRequest, IEnume
             title: request.Title,
             categoryId: request.CategoryId,
             sellerId: request.SellerId,
-            maxPrice: request.Price?.Max,
-            minPrice: request.Price?.Min,
-            maxRating: request.Rating?.Max,
-            minRating: request.Rating?.Min)
+            maxPrice: request.maxPrice,
+            minPrice: request.minPrice,
+            maxRating: request.maxRating,
+            minRating: request.minRating)
             .Select(advert => new AdvertsFilterResponse(
                 Id: advert.Id.ToString(),
                 SellerId: advert.SellerId.ToString(),

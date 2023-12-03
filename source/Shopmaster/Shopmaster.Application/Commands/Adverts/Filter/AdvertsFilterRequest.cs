@@ -1,7 +1,7 @@
 using MediatR;
 using Shopmaster.Application.Common.Dtos;
 
-namespace Shopmaster.Application.Commands.Filter;
+namespace Shopmaster.Application.Commands.Adverts.Filter;
 
 public record AdvertsFilterRequest(
     int Offset,
@@ -9,6 +9,8 @@ public record AdvertsFilterRequest(
     string? Title,
     Guid? SellerId,
     int? CategoryId,
-    RangeFilterDto? Price,
-    RangeFilterDto? Rating
+    int? minPrice,
+    int? maxPrice,
+    int? minRating,
+    int? maxRating
 ) : IRequest<IEnumerable<AdvertsFilterResponse>>;

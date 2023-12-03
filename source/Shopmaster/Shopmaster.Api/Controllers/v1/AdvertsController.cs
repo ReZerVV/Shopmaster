@@ -7,9 +7,9 @@ using Shopmaster.Application.Commands.Adverts.Create;
 using Shopmaster.Application.Commands.Adverts.Deactivate;
 using Shopmaster.Application.Commands.Adverts.Delete;
 using Shopmaster.Application.Commands.Adverts.Edit;
-using Shopmaster.Application.Commands.Filter;
+using Shopmaster.Application.Commands.Adverts.Filter;
+using Shopmaster.Application.Commands.Adverts.My;
 using Shopmaster.Application.Commands.GetById;
-using Shopmaster.Application.Common.Dtos;
 
 namespace Shopmaster.Api.Controllers.v1;
 
@@ -57,8 +57,10 @@ public class AdvertsController : ControllerBase
                                                       [FromQuery] string? title = null,
                                                       [FromQuery] int? categoryId = null,
                                                       [FromQuery] Guid? sellerId = null,
-                                                      [FromBody] RangeFilterDto? price = null,
-                                                      [FromBody] RangeFilterDto? rating = null)
+                                                      [FromQuery] int? minPrice = null,
+                                                      [FromQuery] int? maxPrice = null,
+                                                      [FromQuery] int? minRating = null,
+                                                      [FromQuery] int? maxRating = null)
     {
         return Ok(_mediator.Send(new AdvertsFilterRequest(
             Offset: offset,
@@ -66,9 +68,18 @@ public class AdvertsController : ControllerBase
             Title: title,
             CategoryId: categoryId,
             SellerId: sellerId,
-            Price: price,
-            Rating: rating
+            maxPrice: maxPrice,
+            minPrice: minPrice,
+            maxRating: maxRating,
+            minRating: minRating
         )));
+    }
+
+    [Authorize]
+    [HttpGet("my")]
+    public ActionResult<AdvertsMyResponse> My()
+    {
+        return Ok(_mediator.Send(new AdvertsMyRequest()));
     }
 
     [Authorize]

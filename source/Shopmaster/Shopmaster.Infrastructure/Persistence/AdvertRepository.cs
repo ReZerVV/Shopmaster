@@ -54,11 +54,19 @@ public class AdvertRepository : IAdvertRepository
         return _applicationDbContext.Adverts
             .Include(advert => advert.Seller)
             .Include(advert => advert.Category)
-            .FirstOrDefault(advert => advert.IsActive && advert.Id == advertId);
+            .FirstOrDefault(advert => advert.Id == advertId);
     }
 
     public void Update(Advert advert)
     {
         _applicationDbContext.SaveChanges();
+    }
+
+    public IEnumerable<Advert> GetBySellerId(Guid sellerId)
+    {
+        return _applicationDbContext.Adverts
+            .Include(advert => advert.Seller)
+            .Include(advert => advert.Category)
+            .Where(advert => advert.SellerId == sellerId);
     }
 }

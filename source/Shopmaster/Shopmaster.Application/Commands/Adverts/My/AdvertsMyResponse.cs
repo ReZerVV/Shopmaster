@@ -1,8 +1,8 @@
 using Shopmaster.Domain.Entites;
 
-namespace Shopmaster.Application.Commands.Adverts.Filter;
+namespace Shopmaster.Application.Commands.Adverts.My;
 
-public record AdvertsFilterResponse(
+public record AdvertsMyResponse(
     string Id,
     string SellerId,
     string Title,

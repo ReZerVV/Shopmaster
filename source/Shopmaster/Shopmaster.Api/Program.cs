@@ -12,6 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 }
 var app = builder.Build();
 {
+    app.UseCors(options => 
+        options.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .AllowAnyHeader()
+    );
     app.UseExceptionHandler("/api/errors");
     app.UseHttpsRedirection();
     app.UseAuthentication();
