@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FlX/AgMmqfrtDlcVa1Cay6Gz7nHK+GFpVR3dpEwYZMqr/PrSzYxFpI6Itd6/3rJVuCElful6zTHYKoJMFW23zQ==",
+  "dgSpecHash": "6GacbR0rn4Yf8AQq1pN5PX2JQbk5zrvZePOnmk8DhqrvaIlV/cNh2BVQmjcg0J6PcYAi2AExhdo8rF6s7HJpNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kiril\\Projects\\www Projects\\ShopMaster\\source\\Shopmaster\\Shopmaster.Infrastructure\\Shopmaster.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kiril\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\kiril\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\kiril\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }
