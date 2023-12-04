@@ -1,0 +1,21 @@
+@host=http://localhost:5037
+
+### Register request
+POST {{host}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Cyril",
+    "lastName": "Morozov",
+    "email": "cyril@morozov.com",
+    "password": "Cyril123"
+}
+
+### Login request
+POST {{host}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "cyril@morozov.com",
+    "password": "Cyril123"
+}

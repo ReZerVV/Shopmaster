@@ -15,3 +15,4 @@ C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Inf
 C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\refint\Shopmaster.Infrastructure.dll
 C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.pdb
 C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\ref\Shopmaster.Infrastructure.dll
+C:\Users\kiril\Projects\www Projects\ShopMaster\source\Shopmaster\Shopmaster.Infrastructure\obj\Debug\net7.0\Shopmaster.Infrastructure.sourcelink.json
