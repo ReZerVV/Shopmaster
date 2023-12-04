@@ -49,7 +49,7 @@ public class AuthRegisterHandler : IRequestHandler<AuthRegisterRequest>
         };
         _userRepository.Add(user);
             
-        string confirmationLink = $"{_configuration.GetSection("Host").Value}/api/v1/confirm/{user.Id}";
+        string confirmationLink = $"http://localhost:3000/auth/verify/{user.Id}";
         _emailSender.Send(user.Email, "Confirmation account", $"Confiration link {confirmationLink}");
 
         return Task.CompletedTask;
